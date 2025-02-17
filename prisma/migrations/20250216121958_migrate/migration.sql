@@ -7,6 +7,7 @@ CREATE TABLE `Referral` (
     `refereeEmail` VARCHAR(191) NOT NULL,
     `referralCode` VARCHAR(191) NOT NULL,
     `message` VARCHAR(191) NULL,
+    `course` VARCHAR(191) NOT NULL,
     `termsAccepted` BOOLEAN NOT NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 

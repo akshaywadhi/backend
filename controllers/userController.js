@@ -2,8 +2,9 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 export const refer = async (req,res) => {
+  console.log('hi')
   try {
-    const { referrerName, referrerEmail, refereeName, refereeEmail, referralCode, message, termsAccepted } = req.body;
+    const { referrerName, referrerEmail, refereeName, refereeEmail, referralCode, message, termsAccepted, course} = req.body;
 
     const referral = await prisma.referral.create({
       data: {
@@ -13,7 +14,9 @@ export const refer = async (req,res) => {
         refereeEmail,
         referralCode,
         message,
+        course,
         termsAccepted,
+        
       },
     });
 
