@@ -4,10 +4,11 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js",
-    "build": "prisma generate",
-    "postinstall": "prisma generate"
+   "dev": "nodemon server.js",
+    "build": "npx prisma generate",
+    "migrate": "npx prisma migrate deploy",
+    "postinstall": "npx prisma generate && npm run migrate",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
